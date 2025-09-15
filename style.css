@@ -6,12 +6,24 @@ body{
     height: 200px;
     width: 200px;
     border: 10px solid black;
-    border-radius:20px;
+    border-radius:30px;
+    margin: 1rem;
 }
 
 .btn-container{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    
+}
+
+.red{
+    background-color: #d95980;
+}
+.yellow{
+    background-color: #d95980 ;
+}
+.green{
+    background-color:#63aac0 ;
+}
+.purple{
+    background-color:#819ff9;
 }
