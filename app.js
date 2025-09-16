@@ -26,11 +26,9 @@ function levelUp () {
     let randIndex = Math.floor(Math.random() * 3);
     let randColor = btns[randIndex];
     let randBtn = document.querySelector(`.${randColor}`)
-    // console.log(randIndex)
-    // console.log(randColor)
-    // console.log(randBtn)
+  
     gameSeq.push(randColor);
-    console.log(gameSeq)
+    console.log(gameSeq);
     gameFlash(randBtn);
 }
 //button flash function
@@ -58,17 +56,21 @@ function checkAns(idx){
         }
     }
     else{
-        h2.innerText = "Game over, Press any key to restart";
+        h2.innerHTML = `Game over! Your score was <b>${level}</b> , Press any key to restart`;
+        document.querySelector("body").style.backgroundColor = "red";
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor = "white";
+        },150)
+        reset();
     }
+    
 }
 
 function btnPress(){
-    console.log(this)
     let btn = this;
     btnFlash(btn);
 
     userColor = btn.getAttribute("id");
-    console.log(userColor)
     userSeq.push(userColor);
 
     checkAns(userSeq.length-1);
@@ -80,3 +82,9 @@ for(btn of allBtns){
 
 }
 
+function reset(){
+    started = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
+}
