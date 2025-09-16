@@ -53,6 +53,9 @@ function checkAns(){
 
     if(userSeq[idx] == gameSeq[idx]){
         console.log("Same Value")
+        if(userSeq.length == gameSeq.length){
+            levelUp();
+        }
     }
     else{
         h2.innerText = "Game over, Press any key to restart";
