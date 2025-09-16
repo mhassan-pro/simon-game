@@ -25,23 +25,37 @@ function levelUp () {
     let randIndex = Math.floor(Math.random() * 3);
     let randColor = btns[randIndex];
     let randBtn = document.querySelector(`.${randColor}`)
-    console.log(randIndex)
-    console.log(randColor)
-    console.log(randBtn)
-
-    btnFlash(randBtn);
+    // console.log(randIndex)
+    // console.log(randColor)
+    // console.log(randBtn)
+    gameSeq.push(randColor);
+    console.log(gameSeq)
+    gameFlash(randBtn);
 }
 //button flash function
-function btnFlash(btn){
+function gameFlash(btn){
     btn.classList.add("flash");
     setTimeout( function() {
         btn.classList.remove("flash")},250
     )
 
 }
+//user flash function
+function btnFlash(btn){
+    btn.classList.add("userFlash");
+    setTimeout( function() {
+        btn.classList.remove("userFlash")},250
+    )
+}
+
 
 function btnPress(){
     console.log(this)
+    let btn = this;
+    btnFlash(btn);
+
+    userColor = btn.getAttribute("id");
+    console.log(userColor)
 }
 
 let allBtns = document.querySelectorAll(".btn");
@@ -49,3 +63,4 @@ for(btn of allBtns){
     btn.addEventListener('click', btnPress);
 
 }
+
