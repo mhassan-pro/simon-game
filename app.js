@@ -17,13 +17,21 @@ document.addEventListener('keypress', function(){
     }
 }); 
 
+
 function levelUp () {
     level++;
     h2.inerText = `Level ${level}`;
     
-    btnFlash();
-}
+    let randIndex = Math.floor(Math.random() * 3);
+    let randColor = btns[randIndex];
+    let randBtn = document.querySelector(`.${randColor}`)
+    console.log(randIndex)
+    console.log(randColor)
+    console.log(randBtn)
 
+    btnFlash(randBtn);
+}
+//button flash function
 function btnFlash(btn){
     btnFlash.classList.add("flash");
     setTimeout(function(){
