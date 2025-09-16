@@ -48,13 +48,12 @@ function btnFlash(btn){
     )
 }
 
-function checkAns(){
-    let idx = level-1;
+function checkAns(idx){
 
     if(userSeq[idx] == gameSeq[idx]){
         console.log("Same Value")
         if(userSeq.length == gameSeq.length){
-            levelUp();
+            setTimeout(levelup, 1000)
         }
     }
     else{
@@ -71,7 +70,7 @@ function btnPress(){
     console.log(userColor)
     userSeq.push(userColor);
 
-    checkAns();
+    checkAns(userSeq.length-1);
 }
 
 let allBtns = document.querySelectorAll(".btn");
