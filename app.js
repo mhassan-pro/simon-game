@@ -48,6 +48,16 @@ function btnFlash(btn){
     )
 }
 
+function checkAns(){
+    let idx = level-1;
+
+    if(userSeq[idx] == gameSeq[idx]){
+        console.log("Same Value")
+    }
+    else{
+        h2.innerText = "Game over, Press any key to restart";
+    }
+}
 
 function btnPress(){
     console.log(this)
@@ -56,6 +66,9 @@ function btnPress(){
 
     userColor = btn.getAttribute("id");
     console.log(userColor)
+    userSeq.push(userColor);
+
+    checkAns();
 }
 
 let allBtns = document.querySelectorAll(".btn");
