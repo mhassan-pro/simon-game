@@ -20,7 +20,7 @@ document.addEventListener('keypress', function(){
 
 function levelUp () {
     level++;
-    h2.inerText = `Level ${level}`;
+    h2.innerText = `Level ${level}`;
     
     let randIndex = Math.floor(Math.random() * 3);
     let randColor = btns[randIndex];
@@ -33,9 +33,9 @@ function levelUp () {
 }
 //button flash function
 function btnFlash(btn){
-    btnFlash.classList.add("flash");
-    setTimeout(function(){
-        btnFlash.classList.remove("flash")},1000
+    btn.classList.add("flash");
+    setTimeout( function() {
+        btn.classList.remove("flash")},250
     )
 
 }
