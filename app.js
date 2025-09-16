@@ -19,6 +19,7 @@ document.addEventListener('keypress', function(){
 
 
 function levelUp () {
+    userSeq = [];
     level++;
     h2.innerText = `Level ${level}`;
     
@@ -53,7 +54,7 @@ function checkAns(idx){
     if(userSeq[idx] == gameSeq[idx]){
         console.log("Same Value")
         if(userSeq.length == gameSeq.length){
-            setTimeout(levelup, 1000)
+            setTimeout(levelUp, 1500)
         }
     }
     else{
